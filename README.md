@@ -8,9 +8,11 @@
 # For Mac/ Linux
 
 `. myenv/bin/activate`
+
 `python manage.py runserver`
 
 # For Window
 
 `myenv\Scripts\activate`
+
 `python manage.py runserver`
