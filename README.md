@@ -1,5 +1,5 @@
 
-## Installation
+# Installation
 
 Follow these steps to set up the Django ChatGPT Chatbot:
 
@@ -17,18 +17,18 @@ cd E-commerce
    MY_OPENAI_KEY = 'your_api_key' # Replace YOUR_API_KEY with your openai apikey 
    ```
 
-## Usage
+# Usage
 
 To run the Django ChatGPT Chatbot, follow these steps:
 
-# For Mac/ Linux
+## For Mac/ Linux
 
 ```
 . myenv/bin/activate
 python manage.py runserver
 ```
 
-# For Window
+## For Window
 
 ```
 myenv\Scripts\activate
