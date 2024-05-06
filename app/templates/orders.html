@@ -1,129 +1,19 @@
 {% extends 'base.html' %}
+
 {% block body %}
-<style>
-    .pagination {
-      display: inline-block;
-      padding-left: 0;
-      margin: 20px 0;
-      border-radius: 4px;
-  }
-  .pagination > li {
-      display: inline;
-  }
-  .pagination > li > a,
-  .pagination > li > span {
-      position: relative;
-      float: left;
-      padding: 6px 12px;
-      margin-left: -1px;
-      line-height: 1.42857143;
-      color: #337ab7;
-      text-decoration: none;
-      background-color: #fff;
-      border: 1px solid #ddd;
-  }
-  .pagination > li:first-child > a,
-  .pagination > li:first-child > span {
-      margin-left: 0;
-      border-top-left-radius: 4px;
-      border-bottom-left-radius: 4px;
-  }
-  .pagination > li:last-child > a,
-  .pagination > li:last-child > span {
-      border-top-right-radius: 4px;
-      border-bottom-right-radius: 4px;
-  }
-  .pagination > li > a:hover,
-  .pagination > li > span:hover,
-  .pagination > li > a:focus,
-  .pagination > li > span:focus {
-      z-index: 2;
-      color: #23527c;
-      background-color: #eee;
-      border-color: #ddd;
-  }
-  .pagination > .active > a,
-  .pagination > .active > span,
-  .pagination > .active > a:hover,
-  .pagination > .active > span:hover,
-  .pagination > .active > a:focus,
-  .pagination > .active > span:focus {
-      z-index: 3;
-      color: #fff;
-      cursor: default;
-      background-color: #337ab7;
-      border-color: #337ab7;
-  }
-  .pagination > .disabled > span,
-  .pagination > .disabled > span:hover,
-  .pagination > .disabled > span:focus,
-  .pagination > .disabled > a,
-  .pagination > .disabled > a:hover,
-  .pagination > .disabled > a:focus {
-      color: #777;
-      cursor: not-allowed;
-      background-color: #fff;
-      border-color: #ddd;
-  }
-  .pagination-lg > li > a,
-  .pagination-lg > li > span {
-      padding: 10px 16px;
-      font-size: 18px;
-      line-height: 1.3333333;
-  }
-  .pagination-lg > li:first-child > a,
-  .pagination-lg > li:first-child > span {
-      border-top-left-radius: 6px;
-      border-bottom-left-radius: 6px;
-  }
-  .pagination-lg > li:last-child > a,
-  .pagination-lg > li:last-child > span {
-      border-top-right-radius: 6px;
-      border-bottom-right-radius: 6px;
-  }
-  .pagination-sm > li > a,
-  .pagination-sm > li > span {
-      padding: 5px 10px;
-      font-size: 12px;
-      line-height: 1.5;
-  }
-  .pagination-sm > li:first-child > a,
-  .pagination-sm > li:first-child > span {
-      border-top-left-radius: 3px;
-      border-bottom-left-radius: 3px;
-  }
-  .pagination-sm > li:last-child > a,
-  .pagination-sm > li:last-child > span {
-      border-top-right-radius: 3px;
-      border-bottom-right-radius: 3px;
-  }
-</style>
 <div class="container-fluid">
   <div class="row option-row">
+    <div class="col-sm-4"></div>
     <div class="col-sm-4">
-      <div class="btn-group filter-btn">
-        <button type="button" class="btn btn-default"><i class="fal fa-sort-alpha-up"></i> <span>Select Order Status</span></button>
-        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <i class="far fa-chevron-down"></i>
-        </button>
-        <ul class="dropdown-menu">
-          <li class="active"><a href="/orders">All</a></li>
-          <li ><a href="/orders/pending">Pending</a></li>
-          <li ><a href="/orders/inprogress">In progress</a></li>
-          <li ><a href="/orders/completed">Completed</a></li>
-          <li ><a href="/orders/partial">Partial</a></li>
-          <li ><a href="/orders/processing">Processing</a></li>
-          <li ><a href="/orders/canceled">Canceled</a></li>
-        </ul>
-      </div>
+      <p class="breadcrumbs">You are currently on: <strong>Orders</strong></p>
     </div>
-    <div class="col-sm-4"><p class="breadcrumbs">You are currently on: <strong>Orders</strong></p></div>
     <div class="col-sm-4"></div>
   </div>
+
   <div class="row">
     <div class="col-lg-12">
       <div class="table-responsive">
-        <table class="table ">
+        <table class="table">
           <thead>
             <tr>
               <th>ID</th>
@@ -136,53 +26,57 @@
             </tr>
           </thead>
           <tbody>
-          {% for order in orders %}
+            {% for order in orders %}
             <tr class="table-cont">
               <td data-head="ID">
-                <button type="button" class="btn btn-copy js-tooltip js-copy" data-toggle="tooltip" data-placement="bottom"  title="Copy to clipboard">{{order.id}}</button>
+                <button type="button" class="btn btn-copy js-tooltip js-copy" data-toggle="tooltip" data-placement="bottom" title="Copy to clipboard">{{ order.id }}</button>
               </td>
-              <td data-head="Date" >{{order.date_created}}</td>
+              <td data-head="Date">{{ order.date_created }}</td>
               <td data-head="Link">
                 <div class="input-group table-link-box">
-                  <input class="form-control" value="{{order.link}}">
+                  <input class="form-control" value="{{ order.link }}">
                   <div class="-group-btn">
-                    <a href="/anon.ws?r=https%3A%2F%2Fwww.instagram.com%2Fcarolina261618%3Figsh%3DMTEwdHF5eDBzM25xZQ%3D%3D" target="_blank" type="button" class="btn btn-default"><i class="fas fa-external-link-square-alt"></i></a>
+                    <a href="{{ order.link }}" target="_blank" type="button" class="btn btn-default"><i class="fas fa-external-link-square-alt"></i></a>
                   </div>
-                </div>  
+                </div>
               </td>
-              <td data-head="Quantity">{{order.quantity}}</td>
-              <td data-head="Charge">{{order.charge}}</td>
-              <td data-head="Service" class="service-name"><p> {{order.service.title}}</p></td>
-              <td data-head="Status"><div class="status-badge badge-complete"><span>{{order.status}}</span></div></td>
+              <td data-head="Quantity">{{ order.quantity }}</td>
+              <td data-head="Charge">{{ order.charge }}</td>
+              <td data-head="Service" class="service-name">
+                <p>{{ order.service.title }}</p>
+              </td>
+              <td data-head="Status">
+                <div class="status-badge badge-complete"><span>{{ order.status }}</span></div>
+              </td>
             </tr>
-          {% endfor %}
+            {% endfor %}
           </tbody>
         </table>
       </div>
+
       <ul class="pagination">
         <!-- Previous page button -->
         {% if orders.has_previous %}
-            <li><a href="?page={{ orders.previous_page_number }}" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
+        <li><a href="?page={{ orders.previous_page_number }}" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
         {% else %}
-            <li class="disabled"><span aria-hidden="true">&laquo;</span></li>
+        <li class="disabled"><span aria-hidden="true">&laquo;</span></li>
         {% endif %}
-    
+
         <!-- Pagination links -->
         {% for page_num in page_range %}
-          <li {% if page_num == current_page %}class="active"{% endif %}>
-              <a href="?page={{ page_num }}">{{ page_num }}</a>
-          </li>
+        <li {% if page_num == current_page %}class="active"{% endif %}>
+          <a href="?page={{ page_num }}">{{ page_num }}</a>
+        </li>
         {% endfor %}
+
         <!-- Next page button -->
         {% if orders.has_next %}
-          <li><a href="?page={{ orders.next_page_number }}" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>
+        <li><a href="?page={{ orders.next_page_number }}" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>
         {% else %}
-          <li class="disabled"><span aria-hidden="true">&raquo;</span></li>
+        <li class="disabled"><span aria-hidden="true">&raquo;</span></li>
         {% endif %}
-      </ul>    
-  </div>
+      </ul>
+    </div>
   </div>
 </div>
 {% endblock body %}
-
-

@@ -1,24 +1,29 @@
 {% extends 'base.html' %}
 
 {% block body %}
-  <div class="container mt-3">
+<div class="container mt-3">
+  <div class="row">
     <div class="row">
-      <div class="col-md-12">
+      <div class="col-sm-4"></div>
+          <p class="breadcrumbs">You are currently on: <strong>AI assistant</strong></p>
+      <div class="col-sm-4"></div>
+    </div>
+    <div class="col-md-12">
         <h2>ShopBot Chat</h2>
         <hr>
         <div id="conversation-history"></div>
         <form id="chat-form">
-          <div class="mb-3">
-            <label for="user-message" class="form-label">Your Message:</label>
-            <textarea class="form-control" id="user-message" name="user_message" rows="3"></textarea>
-          </div>
-          
-          <button type="submit" class="btn btn-primary">Send</button>
-          <span id="loading-indicator" class="visually-hidden">Sending...</span>
+            <div class="mb-3">
+                <label for="user-message" class="form-label">Your Message:</label>
+                <textarea class="form-control" id="user-message" name="user_message" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send</button>
+            <span id="loading-indicator" class="visually-hidden">Sending...</span>
         </form>
-      </div>
     </div>
   </div>
+</div>
+
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script>
@@ -26,14 +31,14 @@
       $('#chat-form').submit(function(event) {
         event.preventDefault();
         var userMessage = $('#user-message').val();
-        $('#conversation-history').append('<div><strong>You:</strong> ' + userMessage + '</div>'); // Append user message
+        $('#conversation-history').append('<div><strong>You:</strong> ' + userMessage + '</div>'); 
         $('#loading-indicator').removeClass('visually-hidden');
         $.ajax({
           url: '/chatbot/',
-          type: 'POST', // or 'GET' depending on your server's handling
-          data: { user_input: userMessage }, // corrected field name here
+          type: 'POST', 
+          data: { user_input: userMessage }, 
           success: function(response) {
-            $('#conversation-history').append('<div><strong>ShopBot:</strong> ' + response.bot_response + '</div>'); // Append bot response
+            $('#conversation-history').append('<div><strong>ShopBot:</strong> ' + response.bot_response + '</div>'); 
             $('#user-message').val('');
           },
           error: function(xhr, status, error) {

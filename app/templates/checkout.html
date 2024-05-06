@@ -1,36 +1,5 @@
 {% extends 'base.html' %}
 {% block body %}
-
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-<script>
-    // Wait for the DOM to be fully loaded
-    document.addEventListener("DOMContentLoaded", function() {
-        // Get the select element
-        var selectElement = document.getElementById("method");
-        
-        // Add an event listener for when the select element changes
-        selectElement.addEventListener("change", function() {
-            // Get the selected option
-            var selectedOption = selectElement.options[selectElement.selectedIndex];
-            
-            // If the selected option is not empty, remove the "disabled" attribute from all options
-            if (selectedOption.value !== "") {
-                var options = selectElement.getElementsByTagName("option");
-                for (var i = 0; i < options.length; i++) {
-                    options[i].removeAttribute("disabled");
-                }
-            }
-        });
-    });
-</script>
 <div id="page-wrapper">
     <div class="container-fluid">
         <div class="row">
@@ -51,7 +20,6 @@
             <div class="col-md-8">
                 <ul class="nav nav-tabs" role="tablist">
                 <li class="active"><a href="#add-funds" aria-controls="add-funds" role="tab" data-toggle="tab">Add Funds</a></li>
-                <li><a href="#history" aria-controls="history" role="tab" data-toggle="tab">History</a></li>
                 </ul>
                 <div class="well">
                     <div class="tab-content">
@@ -60,7 +28,7 @@
                                 {% csrf_token %}
                                 <div class="form-group">
                                     <label for="method" class="control-label">Method</label>
-                                    <select class="form-control" id="method" name="AddFoundsForm[type]" id="order_type">
+                                    <select class="form-control" id="method" name="AddFundsForm[type]" id="order_type">
                                         <option>PayPal</option>
                                     </select>
                                 </div>
@@ -72,33 +40,36 @@
                                 </div>
                                 <button type="submit" class="btn btn-secondary">Add Funds</button>
                             </form>
-                        </div>
-                        <div role="tabpanel" class="tab-pane" id="history">
-                            <div class="table-responsive">
-                                <table class="table">
-                                    <thead>
-                                        <tr>
-                                        <th>ID</th>
-                                        <th>Date</th>
-                                        <th>Method</th>
-                                        <th>Amount</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr class="table-cont">
-                                            <td data-head="ID">1031911</td>
-                                            <td data-head="Date"><span class="nowrap">2024-04-11 23:46:52</span></td>
-                                            <td data-head="Method">Bonus</td>
-                                            <td data-head="Amount"><span data-toggle="tooltip" data-placement="left" title="3.67231&nbsp;AED">≈ 1.00</span></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
+                        </div>            
                     </div>
                 </div>
-            </div>
+            </div>        
         </div>
     </div>
-</div>    
+</div>   
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var selectElement = document.getElementById("method");
+        
+        selectElement.addEventListener("change", function() {
+            var selectedOption = selectElement.options[selectElement.selectedIndex];
+            
+            if (selectedOption.value !== "") {
+                var options = selectElement.getElementsByTagName("option");
+                for (var i = 0; i < options.length; i++) {
+                    options[i].removeAttribute("disabled");
+                }
+            }
+        });
+    });
+</script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
 {% endblock body %}
