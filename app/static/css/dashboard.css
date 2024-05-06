@@ -1,0 +1,537 @@
+button:hover{
+    background-color: #858585;
+    }
+    input {
+    border-radius: 10px;
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    outline: none;
+    transition: border-color 0.3s;
+    }
+    input:focus {
+    border-color: dodgerblue;
+    box-shadow: 0 0 5px rgba(219, 219, 228, 0.5);
+    }
+        .panel-body.border-solid.border-rounded {
+        border: 1px solid #000;
+        font-size: 14px;
+        }
+        .nightmode .panel-body.border-solid.border-rounded {
+        background-color: #484848;
+        border-color: #484848;
+        }
+        .cate-swipper-nav .swiper-button-prev {
+        left: -15px;
+        }
+        .cate-swipper-nav .swiper-button-next {
+        right: -15px;
+        }
+        .cate-swipper-nav div:after {
+        font-size: 15px;
+        font-weight: 700;
+        }
+        .cate-swipper-nav div {
+        margin-top: -29px;
+        }
+        .brand-company {
+        display: block;
+        margin-bottom: 15px;
+        }
+        .col-3 {
+        width: 19.436%;
+        display: inline-block;
+        margin: 4px 2px;
+        }
+        .ar .brand-company .media-body {
+        width: auto;
+        }
+        .brand-category {
+        display: flex;
+        background-color: #fff;
+        border-radius: 5px;
+        border: 1px solid #000;
+        padding: 8px;
+        position: relative;
+        text-decoration: none;
+        width: 100%;
+        text-align: left;
+        font-size: 16px;
+        font-weight: 500;
+        }
+        .nightmode .brand-category {
+        background-color: #484848;
+        color: #fff;
+        border-color: #484848;
+        }
+        .brand-category .icon {
+        margin-right: 10px;
+        }
+        .ar .brand-category .icon {
+        margin-left: 10px;
+        margin-right: 0;
+        }
+        /*.select2-container .selection .select2-selection {
+            padding: 0;
+        }
+        .select2-search--dropdown label.select2-search__field-icon {
+            right: 16px;
+            left: auto;
+            padding: 0;
+            margin: 0;
+        }
+        .select2-results__option {
+            padding: 0;
+            background-color: transparent;
+        }
+        .select2-container .dropdown-menu > li > a {
+            line-height: 32px;
+            padding: 4px 15px;
+        }*/
+        .select2-results__option {
+            border-bottom: 1px solid #d2d2d2;
+        }
+        .select2-selection__id.badge.badge-secondary.badge-pill.rounded-pill {
+            background-color: transparent;
+            color: inherit;
+            padding: 0;
+            border-radius: 0;
+            min-width: auto;
+            font-size: inherit;
+            font-weight: inherit;
+            line-height: inherit;
+        }
+        .select2-container .select2-selection--single .select2-selection__rendered > span {
+            line-height: 36px;
+            display: block;
+        }
+        .label-badge {
+            background-color: #fdf001;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-left: 10px;
+            display: inline-block;
+        }
+        .label-badge i{
+            margin-right: 3px;
+        }
+        .label-badge.rate-badge i {
+            margin-right: 0;
+            margin-left: 3px;
+        }
+        .ar .label-badge{
+            margin-left:0;
+            margin-right: 10px
+        }
+        .ar .label-badge i{
+            margin-right: 0;
+            margin-left: 3px;
+        }
+        .ar .label-badge.rate-badge i {
+            margin-right: 3px;
+            margin-left: 0;
+        }
+        .nightmode .label-badge{
+            background-color: #484848;
+        }
+        .banner-inner p .uData {
+        font-weight: 700;
+        font-size: 16px;
+        }
+        .modal-logo img {
+            max-width: 172px;
+        }
+        .statusModal .modal-lg {
+        width: 1140px;
+        }
+        .statusModal .modal-header {
+        padding: 0;
+        border: none;
+        }
+        .statusModal .modal-content {
+        border-radius: 45px;
+        border: none;
+        }
+        .statusModal .modal-header button.close {
+        position: absolute;
+        right: 0;
+        box-shadow: none;
+        background-color: #fdf001;
+        z-index: 11;
+        color: #000;
+        opacity: 1;
+        text-shadow: none;
+        border: none;
+        font-weight: 300;
+        }
+        .statusModal .modal-body {
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .modal-left {
+        max-width: 20%;
+        flex: 0 0 20%;
+        }
+        .modal-right {
+        max-width: 80%;
+        flex: 0 0 80%;
+        display: flex;
+        flex-wrap: wrap;
+        }
+        .modal-logo {
+        background-color: #000;
+        border-radius: 42px 0 0 0;
+        text-align: center;
+        padding: 25px 0;
+        }
+        .ar .modal-logo {
+            border-radius: 0 42px 0px 0;
+        }
+        .status-box-wrap {
+        max-width: 16.65%;
+        flex: 0 0 16.65%;
+        transition: all 0.4s ease-in;
+        }
+        .modal-status-title {
+        background-color: #f7f9f9;
+        margin: 0;
+        list-style: none;
+        padding: 30px 25px;
+        }
+        .ar .modal-status-title {
+        padding: 30px 23px;
+        }
+        .modal-status-title li {
+        font-size: 16px;
+        font-weight: 400;
+        color: #000;
+        line-height: 48px;
+        }
+        .modal-status-title li sup{
+        font-size: 14px;
+        font-weight: 700;
+        }  
+        .status-slider .slick-list {
+        padding: 0 !important;
+        }
+        .status-box-top {
+        padding: 20px 0;
+        text-align: center;
+        }
+        .status-box-top h4 {
+        color: #b0b0b0;
+        font-weight: 300;
+        font-size: 14px;
+        margin-top: 0;
+        margin-bottom: 5px;
+        }
+        .status-box-top h3 {
+        margin-bottom: 0;
+        font-size: 22px;
+        font-weight: 500;
+        color: #000;
+        }
+        .status-box-badge {
+        background-image: url(https://cdn.mypanel.link/1847ba/5urj7tufn4wwtfbr.png);
+        width: 126px;
+        height: 83px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 10px auto 0;
+        background-repeat: no-repeat;
+        background-position: 0 0;
+        }
+        .slick-center .status-box-badge{
+        background-position: -127px 0px;
+        }
+        .modal-status-value {
+        padding: 30px 0px;
+        margin: 0;
+        list-style: none;
+        }
+        .modal-status-value li {
+        text-align: center;
+        line-height: 48px;
+        min-height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        }
+        .modal-status-value li .price {
+        font-size: 32px;
+        font-weight: 400;
+        margin: 0;
+        color: #000;
+        line-height: inherit;
+        }
+        .modal-status-value li .price sup {
+        font-weight: 700;
+        }
+        .slick-center .status-box-wrap {
+        background-color: #efe200;
+        }
+        .slick-center .status-box-wrap h4 {
+        color: #fff;
+        }
+        .modal-status-value li div {
+        width: 24px;
+        height: 24px;
+        display: flex;
+        margin: auto;
+        border-radius: 50px;
+        text-align: center;
+        line-height: 24px;
+        font-size: 14px;
+        align-items: center;
+        justify-content: center;
+        }
+        .modal-status-value li div.disabl {
+        color: #ffffff;
+        background-color: #5a4949;
+        }
+        .modal-status-value li div.enble {
+        background-color: #efe200;
+        }
+        .slick-center .modal-status-value li div.disabl, .slick-center .modal-status-value li div.enble {
+        background-color: #fff;
+        }
+        .slick-center .modal-status-value li div.disabl{
+        color: #efe7e7;
+        }
+        .status-slider .slick-dots button::before {
+        background-color: #efe200;
+        width: 10px;
+        height: 10px;
+        }
+        .status-slider .slick-dots button {
+        padding: 0;
+        width: 10px;
+        height: 10px;
+        }
+        .status-slider .slick-dots li {
+        height: auto;
+        width: auto;
+        }
+        .slick-dotted.status-slider {
+        margin-bottom: 0;
+        }
+        .ar .statusModal .modal-header button.close {
+        right: auto;
+        left: -15px;
+        float: left;
+        }
+        .modal-bottom {
+            max-width: 100%;
+            flex: 0 0 100%;
+            background-color: #f7f9f9;
+            border-radius: 0 0 42px 42px;
+            padding: 10px 25px 15px;
+        }
+        .modal-bottom p {
+            font-size: 14px;
+            margin: 0;
+        }
+        .modal-bottom ul {
+            margin: 0;
+            padding: 0;
+            line-height: 1;
+        }
+        .modal-bottom ul li {
+            font-size: 13px;
+        }
+        .ar .modal-status-value{
+            padding: 22px 0px;
+        }
+        .nightmode .modal-bottom,
+        .nightmode .modal-status-title{
+            background-color: #484848;
+        }
+        .nightmode .modal-status-title li,
+        .nightmode .status-box-top h3,
+        .nightmode .modal-status-value li .price{
+            color:#ffffff;
+        }
+        .nightmode #service_name{
+            color: #000000;
+        }
+        .nav-tabs > li.search-wrap > a {
+            padding-left: 8px;
+            padding-right: 10px;
+            /*background-color: #fdf001;
+            border-color: #fdf001;
+            color: #000;*/
+        }
+        .dashboard #search-serv .input-group .btn.btn-primary {
+            border-radius: 30px;
+            font-weight: 200;
+            padding-left: 13px;
+            padding-right: 13px;
+            margin-left: 10px;
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .ar.dashboard #search-serv .input-group .btn.btn-primary{
+            margin-left:0;
+            margin-right:10px
+        }
+        #search-serv .input-group .form-control {
+            border-radius: 4px;
+        }
+        .nightmode .label-badge i {
+            color: #fdf001;
+        }
+        .srch_group .input-group-btn {
+        position: absolute;
+        right: 5px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 2;
+        width: auto;
+        }
+        .input-group.form-group.srch_group {
+        width: 100%;
+        position: relative;
+        display: block;
+        clear: both;
+        }
+        .input-group.srch_group .form-control {
+        float: none;
+        z-index: 1;
+        border-radius: 4px;
+        }
+        .srch_group .input-group-btn .btn.btn-primary.btn-sm {
+        padding: 2px 15px;
+        border-radius: 5px;
+        margin-left: 0;
+        }
+        .ar .srch_group .input-group-btn {
+        right: auto;
+        left: 5px;
+        }
+        @media(max-width:550px){
+            .label-badge{
+            font-size: 9.5px;
+            margin-left: 4px;
+            }
+            .ar .label-badge{
+            margin-right: 4px;
+            }
+            .modal-logo{
+            border-radius: 42px 42px 0 0;
+            }
+            .modal-status-title {
+            display: none;
+            }
+            .statusModal .modal-body {
+            flex-direction: column;
+            }
+            .modal-left,
+            .modal-right{
+            max-width: 100%;
+            flex: 0 0 100%;
+            }
+            .statusModal .modal-lg {
+            width: auto;
+            }
+            .status-box-wrap {
+            max-width: 100%;
+            flex: 0 0 100%;
+            }
+            .status-box-top {
+            padding: 10px 0;
+            }
+            .modal-status-value {
+            padding: 10px 0px;
+            }
+            .modal-status-value li{
+            min-height: 38px;
+            }
+            .modal-status-value li div, 
+            .modal-status-value li h5 {
+            position: relative;
+            padding-left: 75%;
+            border-radius: 4px;
+            height: auto;
+            line-height: 32px;
+            display: block;
+            margin-top: 0;
+            margin-bottom: 0;
+            width: auto;
+            }
+            .modal-status-value li div::before, 
+            .modal-status-value li h5::before {
+            content: attr(data-head);
+            display: inline-block;
+            position: absolute;
+            left: 10px;
+            font-size: 14px;
+            line-height: 32px;
+            }
+            .modal-status-value li .price::before {
+            position: relative;
+            left: auto;
+            margin-right: 10px;
+            }
+            .modal-status-value li div i {
+            margin-right: 15px;
+            margin-left: -15px;
+            }
+            .modal-status-value li .price {
+            font-size: 14px;
+            line-height: 32px;
+            padding-left: 0;
+            display: inline-block;
+            white-space: nowrap;
+            }
+            .ar .modal-status-value li div::before, 
+            .ar .modal-status-value li h5::before {
+            left: auto;
+            right: 10px;
+            }
+            .ar .modal-status-value li div, 
+            .ar .modal-status-value li h5 {
+            padding-right: 75%;
+            padding-left: 0;
+            }
+            .ar .modal-status-value li div i {
+            margin-right: -15px;
+            margin-left: 15px;
+            }
+            .ar .modal-status-value li .price {
+            padding-right: 0;
+            }
+            .ar .modal-status-value li .price::before{
+            margin-left: 20px;
+            margin-right: 0;
+            }
+            .nightmode .modal-status-value li div {
+            color: #000;
+            }
+            .ar .statusModal .modal-header button.close{
+            left: 5px;
+            }
+            .ar .modal-logo {
+            border-radius: 42px 42px 0px 0;
+            }
+            .col-3{
+            width: 31.43%;
+            }
+            .brand-category{
+            font-size: 12px;
+            }
+        }
+        @media(max-width:360px){
+            .col-3 {
+            width: 30.9%;
+            }
+            .brand-category .icon {
+            margin-right: 5px;
+            }
+        }
+    

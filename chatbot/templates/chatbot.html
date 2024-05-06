@@ -1,0 +1,133 @@
+<link rel="shortcut icon" type="image/ico" href="https://cdn.mypanel.link/1847ba/rq3w4hc5t3bi8jke.ico" />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Material+Icons&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/0.8.2/css/flag-icon.min.css" />
+<link href="https://cdn.jsdelivr.net/gh/kartik-v/bootstrap-fileinput@5.5.2/css/fileinput.min.css" media="all" rel="stylesheet" type="text/css" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-fileinput@5.5.2/themes/explorer-fa5/theme.css" media="all" rel="stylesheet" type="text/css" />
+<script src="//code.jivosite.com/widget/RyRlLFPuOG" async></script>
+<link rel="stylesheet" type="text/css" async href="https://cdn.mypanel.link/1847ba/tyqhli85hls2h2q7.css">
+<link rel="stylesheet" type="text/css" async href="https://cdn.mypanel.link/1847ba/4qq2m3y607grj6p0.css">
+<link rel="stylesheet" type="text/css" async href="https://cdn.mypanel.link/libs/bootstrap-datetimepicker/4.17.47/bootstrap-datetimepicker.min.css">
+<link rel="stylesheet" type="text/css" async href="https://cdn.mypanel.link/css/font-awesome/css/all.min.css">
+<link rel="stylesheet" type="text/css" async href="https://cdn.mypanel.link/global/tp2jssyocan4ndm1.css">
+<main class="inner-wrap">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-4"></div>
+      <div class="col-sm-4"><p class="breadcrumbs">You are currently on: <strong>AI assistante </strong></p></div>
+    </div>
+    <div id="ticket-form" class="create-ticket-wrap">
+      <form method="post" action="{% url 'chatbot_view' %}" id="ticketsend">
+        {% csrf_token %}
+        <div class="form-group">
+          <label class="control-label">Select Category</label>
+          {% for intent in intents %}
+          <div class="custom-control">
+            <input type="radio" class="custom-control-input subject ticket-options" id="{{ intent.name }}" name="intent" value="{{ intent.id }}">
+            <label class="custom-control-label ticket-options-label" for="{{ intent.name }}"><span class="opt-text">{{ intent.name }}</span></label>
+          </div>
+          {% endfor %}
+        </div>
+        <div class="form-group">
+          <label class="control-label">Select Subject</label>
+          {% for entity in entities %}
+          <div class="custom-control">
+            <input type="radio" class="custom-control-input subject ticket-options" id="{{ entity.name }}" name="entities" value="{{ entity.id }}">
+            <label class="custom-control-label ticket-options-label" for="{{ entity.name }}"><span class="opt-text">{{ entity.name }}</span></label>
+          </div>
+          {% endfor %}
+        </div>
+        <div class="form-group">
+          <label class="control-label" for="message">Message</label>
+          <textarea class="form-control" rows="7" id="message" name="message"></textarea>
+        </div>
+        <div class="form-group">
+          <div class="tickets-uploader" data-rtl="false" data-lang-button-attach="Attach files" data-lang-file-format-incorrect="Invalid file format" data-lang-file-size-incorrect="File is too large (limit 5 MB)"></div>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </div>
+</main>
+<script type="text/javascript" src="https://cdn.mypanel.link/libs/jquery/1.12.4/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.mypanel.link/global/cflcci28nes0yhln.js"></script>
+<script type="text/javascript" src="https://cdn.mypanel.link/global/t3u8bszy7ju8y8or.js"></script>
+<script type="text/javascript" src="https://cdn.mypanel.link/global/oor0gfnm6a7rec3u.js"></script>
+<script type="text/javascript" src="https://cdn.mypanel.link/global/5sj057uwzy9m8fjz.js"></script>
+<script type="text/javascript" src="https://cdn.mypanel.link/1847ba/dnnciso7qgmr17u5.js"></script>
+<script type="text/javascript" src="https://cdn.mypanel.link/1847ba/efq6bw5fxt96bd2j.js"></script>
+<script type="text/javascript" >window.modules.layouts = {"theme_id":4,"auth":1,"live":true,"csrftoken":"xthyDCYQ_vBUBopemTmWI38ALhUwA_zVKIgjXDaU05ODgDRFd3uMoBVXuWiuDN9yFzJIUXJpm5tb0RtpXv_j8Q=="};</script>
+<script type="text/javascript" >window.modules.siteTickets = {"createTicketUrl":"\/ticket-create","getCdnTokenUrl":"\/tickets\/get-cdn-token","cdnUploadUrl":"https:\/\/upload.mypanel.link\/api\/upload"};       </script>
+<script type="text/javascript" >window.cdn_token = {"token":"eyJ0eXAiOiJKV1QifQ.eyJhcHBsaWNhdGlvbklkIjo1LCJkb21haW4iOiJodHRwczpcL1wvc21tY3Bhbi5jb20iLCJhY2Nlc3NSdWxlcyI6IntcImRlbGV0ZVwiOnRydWUsXCJ1cGxvYWRcIjp0cnVlfSIsInJlc3RyaWN0aW9ucyI6eyJtYXhTaXplIjo1MjQyODgwLCJtaW1lVHlwZXMiOlsiaW1hZ2VcL3BuZyIsImltYWdlXC9qcGVnIiwiaW1hZ2VcL2dpZiIsInRleHRcL3BsYWluIiwidGV4dFwvY3N2IiwiYXBwbGljYXRpb25cL3BkZiJdfSwia2V5IjoiZ2hscFNidVVRa281SjJiWiIsImZvbGRlciI6IjE4NDdiYSIsImV4cCI6MTcxNDQ0MTI4NH0.7eQFMq9eI2-oI4aoxq1607O9g1Pq5gnBqkbr5WCZ04g","exp":1714441284};       </script>
+
+<script>
+  function toggleMobileMode() {
+    modeNature = !modeNature;
+    if (modeNature) {
+      $('#toggleMIcon').text('wb_sunny');
+      $('#toggleMText').text('Day Mode');
+      daymode = $('.daymode').removeClass('daymode');
+      daymode.addClass('nightmode');
+      $.get('/changevariable/custom_variable_1?value=1', function() {
+      });
+    } else {
+      $('#toggleMIcon').text('nights_stay');
+      $('#toggleMText').text('Night Mode');
+      nightmode = $('.nightmode').removeClass('nightmode');
+      nightmode.addClass('daymode');
+      $.get('/changevariable/custom_variable_1?value=0', function() {
+      });
+    }
+  }
+  var modeNature = false;
+</script>
+                                                      
+<script type="text/javascript">
+    $('#fund-history').on('click', function(e) {
+      if ($(this).text() == "Check History") { 
+        $(this).text("Go Back"); 
+      } else { 
+        $(this).text("Check History"); 
+      };
+      $('#ticket-form, #ticket-table').toggleClass("hidden");
+    });
+    function HideEverything(){
+      $('.payment').hide();
+      $('.thePaymentRequest').hide();
+      $('.ordernumbers').hide();
+      $('.therequest').hide();
+      $('.transactionid').hide();
+    }
+  $(document).ready(function(){
+    $('.subject').change(function(){
+      HideEverything();
+      if($(this).val()=='Order' || $(this).val()=='الطلبات'){
+        $('.ordernumbers').show();
+        $('.therequest').show();
+      }
+      if($(this).val()=='Payment' || $(this).val()=='المدفوعات'){
+        $('.payment').show();
+        $('.thePaymentRequest').show();
+        $('.transactionid').show();
+      }
+    });
+    $('#send').click(function(e){
+      e.preventDefault();
+      $TheSubject = $('.subject:checked').val();
+      $TheRequest = $('.second-options:checked').val();
+      $ThePaymentRequest = $('.payment-options:checked').val();
+      $FinalSubject = $('.subject:checked').val();
+      if ($TheSubject == 'Order' || $TheSubject == 'الطلبات'){
+        $final = "Order ID: " + $('#ordernumbers').val() + '\n' + 'Request: ' + $TheRequest + '\n\n'+ $('#message').val();
+        $FinalSubject;
+      } else if ($TheSubject == 'Payment' || $TheSubject == 'المدفوعات'){
+        $final = 'Payment Method: ' + $ThePaymentRequest + '\n\n'+ $('#message').val();
+        $FinalSubject;
+      }else{
+        $final = $('#message').val();
+      }
+      $('#alldata').val($final);
+      $('.subject:checked').val(""+$FinalSubject);
+      $('#ticketsend').submit();
+    });
+  });
+</script>

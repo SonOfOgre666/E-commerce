@@ -1,0 +1,23 @@
+{% load static %}
+<header class="p-3 ">
+    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+      <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+        <li><a href="{% url 'dashboard' %}" class="btn link-secondary {% if request.path == '/dashboard/' %}active{% endif %}"><strong>Dashboard</strong></a></li>
+        <li><a href="{% url 'orders' %}" class="btn link-secondary {% if request.path == '/orders/' %}active{% endif %}"><strong>Orders</strong></a></li>
+        <li><a href="{% url 'add_funds' %}" class="btn link-secondary {% if request.path == '/add_funds/' %}active{% endif %}"><strong>Add Funds</strong></a></li>
+        <li><a href="{% url 'chatbot' %}" class="btn link-secondary {% if request.path == '/chatbot/' %}active{% endif %}"><strong>AI assistant</strong></a></li>
+      </ul>
+      <div class="d-flex">
+        <div class="dropdown">
+          <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="{% static 'icons/profile.png'%}" alt="mdo" width="50" height="50" class="rounded-circle">
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end text-small" aria-labelledby="dropdownUser1">
+            <li><a class="dropdown-item" href="{%url 'profile' %}"><strong>Profile</strong></a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="{% url 'logout' %}"><strong>Sign out</strong></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>

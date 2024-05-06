@@ -1,0 +1,260 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body %}
+
+  <div class="b-example-divider"></div>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const spentElement = document.querySelector(' .spent'); 
+        const amountElement = document.querySelector(' .amount'); 
+        const eyeIcon = document.querySelector('.viewmoney .open-eye'); 
+        const eyeSlashIcon = document.querySelector('.viewmoney .closed-eye'); 
+    
+        amountElement.textContent = '****';
+        spentElement.textContent = '****';
+    
+        eyeIcon.addEventListener('click', () => {
+            eyeIcon.style.display = 'none'; 
+            eyeSlashIcon.style.display = ''; 
+            amountElement.textContent = '{{ user.funds }}';
+            spentElement.textContent = '{{ user.amount_spent }}';
+        });
+    
+        eyeSlashIcon.addEventListener('click', () => {
+            eyeIcon.style.display = ''; 
+            eyeSlashIcon.style.display = 'none'; 
+            amountElement.textContent = '****';
+            spentElement.textContent ='****';
+        });
+    
+    });
+</script>
+
+  <section>
+    <div id="page-wrapper">
+      <main class="inner-wrap">
+        <section id="info-banner">
+            <div class="container-fluid">
+              <div class="banner-">
+                <div class="row">
+                  <div class="col-sm-8">
+                    <div class="row">
+                      <div class="col-sm-6">
+                        <h2><strong>Welcome back, {{ user.username }}!</strong></h2>
+                        <h5>
+                          <strong>
+                            <div>
+                              <i class="fas fa-money-bill-alt"></i> Your balance is:<br><br>
+                            </div>
+                              <span class="viewmoney">$<span class="amount"></span>&nbsp;  <i class="far fa-eye open-eye"></i>  <i class="far fa-eye-slash closed-eye" style="display: none;"></i>  </span>
+                            </div>
+                            <div>
+                              <i class="fas fa-sack-dollar"></i> Amount Spending:<br><br>
+                              <span class="viewspent">$<span class="spent"></span></span>
+                            </div>
+                          </strong>
+                        </h5>        
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-4">
+                    <div class="row justify-content-end">
+                        <div class="col-sm-6 text-end">
+                            <h5 ><strong>{{ user.total_orders }}</strong></h5>
+                            <h6><strong>Orders Completed</strong></h6>
+                            <img src="{% static 'icons/order.png'%}" alt="" class="order-cart" />
+                        </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </section>
+        <div class="b-example-divider"></div>
+        <div class="row">
+          <div class="col-md-5">
+            <ul class="nav nav-tabs">
+              <li class="active"><a data-toggle="tab" aria-controls="new-order" href="#new-order"><strong>New Order</strong></a></li>
+            </ul>
+
+            <div class="well">
+              <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="new-order">
+                  <section id="cate-choices">
+                    <div class="container-fluid">
+                      <div class="row">
+                        <div class="col-sm-12">
+                          <div class="brand-company">
+                            <div class="col-3">
+                              <button type="button" class="media brand-category" value="Facebook Services">
+                                <div class="icon"><i class="fab fa-facebook"></i></div>
+                                <span class="media-body"><strong>Facebook</strong></span>
+                              </button>
+                            </div>
+                            <div class="col-3">
+                              <button type="button" class="media brand-category" value="Instagram Services">
+                                <div class="icon"><i class="fab fa-instagram"></i></div>
+                                <span class="media-body"><strong>Instagram</strong></span>
+                              </button>
+                            </div>
+                            <div class="col-3">
+                              <button type="button" class="media brand-category" value="TikTok Services">
+                                <div class="icon"><i class="fab fa-tiktok"></i></div>
+                                <span class="media-body"><strong>TikTok</strong></span>
+                              </button>
+                            </div>
+                            <div class="col-3">
+                              <button type="button" class="media brand-category" value="Twitter Services">
+                                <div class="icon"><i class="fab fa-twitter"></i></div>
+                                <span class="media-body"><strong>Twitter</strong></span>
+                              </button>
+                            </div>
+                            <div class="col-3">
+                              <button type="button" class="media brand-category" value="YouTube Services">
+                                <div class="icon"><i class="fab fa-youtube"></i></div>
+                                <span class="media-body"><strong>YouTube</strong></span>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+
+                  <form action="{% url 'submit_order' %}" method="post" >
+                    {% csrf_token %}
+                    <div class="form-group">
+                      <label for="category" class="control-label"><h6><strong>Category</strong></h6></label>
+                      <input type="text" class="form-control" id="category" name="category" value="" readonly>
+                    </div>
+                  
+                    <div class="form-group">
+                      <label for="services" class="control-label"><h6><strong>Services</strong></h6></label>
+                      <select class="form-control" id="services" name="services"></select>
+                    </div>
+                  
+                    <div class="form-group">
+                      <label for="link" class="control-label"><h6><strong>Link</strong></h6></label>
+                      <input type="text" class="form-control" id="link" name="link" value="">
+                      <div id="guide" class="text-muted"></div> 
+                    </div>
+                  
+                    <input type="hidden" id="pricePer1000" name="pricePer1000" value="">
+                  
+                    <div class="form-group">
+                      <label for="quantity" class="control-label"><h6><strong>Quantity</strong></h6></label>
+                      <input type="text" class="form-control" id="quantity" name="quantity" value="">
+                    </div>
+                  
+                    <div class="form-group">
+                      <label for="price" class="control-label"><h6><strong>Price</strong></h6></label>
+                      <input type="text" class="form-control" id="price" name="price" value="" readonly>
+                    </div>
+                  
+                    <button type="submit" class="btn btn-primary"><strong>Submit</strong></button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <ul class="nav nav-tabs" role="tablist">
+              <li class="noti no-hover"><a href="#read-before" aria-controls="read-before" role="tab" data-toggle="tab" >READ before you order</a></li>
+            </ul>
+            <div class="well">
+              <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="read-before">
+                              <p><strong>Please READ those notes carefully before you place an order</strong></p>
+                  <p>- All accounts must be Public , Not Private<br> 
+                    - Please DO NOT order more than 1 order for the same link at the same time until the first one is Completed.<br>
+                    - Make sure your Subs and Likes and Views counter is public not private before you order.<br>
+                    - WE CAN'T Cancel/Edit any order after you put it on the system unless it got no problems , so please make sure to do the right order.<br>
+                    - If you change ur account to private or your video or post got deleted after you put the order we will mark the order as completed and we can't cancel it in any case.<br>
+                    - Please DO NOT order for ( Porn, Politics, extremism, and any content that stirs public opinion Accounts.<br>
+                    - When you make a new order you accept out terms and conditions.<br>
+                    - IMP : When you add funds we cant reverse your payment in any case and you will just be able to use your funds on the website.</p>
+                  <p><strong>Refill System :</strong></p> 
+                  <p>- Refill system works according to the start, quantity and end count for each order separately.</p>
+                  <p>- so when you request a refill for many orders we will take a look on each order separate depending on his numbers as we described above.</p>
+                  <p>- if you have order followers for example and a drop occured , please contact us via Tickets to refill it and DO NOT order a new one until the first one got fully refilled because the new order will have the current start count of your account and the time you order.</p>
+                  <p>- Refill period differ along the updates and overload but usually its done within 24-72 Hours.</p>
+                  <p>- If your account has a big number of followers for example : 200k and you order 2k , Logically it will have a drop from the old followers so we cant refill in this case so make sure to order all followers from our side so we could follow up and refill all of your orders.</p>
+                  <p><strong>DID not find the service you need ?</strong></p>
+                  <p>- please rise a ticket with a subject of " Request " so our team will follow up and try to add the service for you</p>
+                            </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </section>
+
+  <div class="b-example-divider"></div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script type="text/javascript">
+  $(document).ready(function() {
+    $('.media').click(function(){
+        var category = $(this).attr("value");
+        $('#category').val(category);
+        
+        $.ajax({
+            type: "POST",
+            url: "/get_category/",
+            data: JSON.stringify({ category: category }),
+            contentType: 'application/json',
+            success: function(data) {
+                $('#services').empty();
+                $('#services').append('<option value="please_select">...please select...</option>');
+
+                
+                $.each(data.services, function(index, service) {
+                    $('#services').append($('<option>', {
+                      value: service.title, 
+                        text: service.title                    
+                      }));
+                });
+            }
+        });
+    });
+
+    $("#services").change(function(){
+        var selectedValue = $(this).val();
+        $('#services option[value="please_select"]').remove();
+
+        $.ajax({
+            type: "POST",
+            url: "/get_guide_price/",
+            data: JSON.stringify({ selectedValue: selectedValue }),
+            contentType: 'application/json',
+            success: function(data) {
+                $('#guide').text(data.guide_prompt); 
+                $('#pricePer1000').val(data.price_per_1000);  
+            }
+        });
+    });
+
+    $('#quantity').on('input', calculateResult);  
+
+    function calculateResult() {
+        var pricePer1000 = parseFloat($('#pricePer1000').val());
+        var quantity = parseInt($('#quantity').val());
+
+        if ($('#quantity').val() === '') {
+          $('#price').val('');
+          return; 
+        }
+        if (!isNaN(pricePer1000) && !isNaN(quantity)) {
+            var result = (pricePer1000 * quantity) / 1000;
+
+            $('#price').val(result);
+        }
+    }
+
+});
+</script>
+</script>
+
+{% endblock body %}
+  
