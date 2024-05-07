@@ -19,7 +19,7 @@ cd E-commerce
 
 # Usage
 
-To run the Django ChatGPT Chatbot, follow these steps:
+To run the Django E-commerce Project, follow these steps:
 
 ## For Mac/ Linux
 
